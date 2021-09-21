@@ -1,12 +1,7 @@
-
-
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-
-
 import Login from './components/Login';
 import Signup from "./components/Signup";
-
 
 
 class App extends Component {
@@ -14,7 +9,7 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/login" component={Login}/>
+            <Route path="/login" component={Login}/>
             <Route path="/signup" component={Signup}/>
         </Switch>
       </div>
@@ -23,4 +18,3 @@ class App extends Component {
 }
 
 export default App;
-

@@ -36,12 +36,36 @@ export const FooterWrapper = styled.div`
     color: #4F4B6D;
     float: left;
     margin-top: 11px;
-    .p a{
-    font-color: #EDA794;
+    p a{
+    color: #EDA794;
     }
 `
+
 export const SpanWrapper = styled.span`
     margin-left: 33px;
     margin-right: 10px;
     vertical-align: middle;
+    svg{
+    color: #F8F9F9;
+    }
+`
+
+export const LoginButton = styled.button`
+    background-color: #EDA794;
+    width: 45px;
+    height: 45px;
+    float: right;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+    svg{
+    color: #F8F9F9;
+    }
+`
+
+export const LoginForm = styled.div`
+    width: 27%;
+    padding: 10px;
+    margin: auto;
+    margin-block: 15%;
 `

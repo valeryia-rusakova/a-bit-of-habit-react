@@ -1,14 +1,18 @@
 import * as React from 'react';
 import {Component} from "react";
+import "../css-common";
+import {Container, Grid} from "@material-ui/core";
 import {AccountCircle, Lock} from "@material-ui/icons";
 import {East} from "@mui/icons-material";
-import "../css-common";
 import {
-    FooterWrapper,
+    FooterButton, FooterLink,
     FormFieldWrapper,
     HeaderWrapper,
-    SpanWrapper,
-    InputWrapper, LoginButton, LoginForm
+    InputWrapper,
+    LinkWrapper,
+    LoginButton,
+    LoginForm,
+    SpanWrapper
 } from "../css-common";
 
 
@@ -38,25 +42,37 @@ export default class Login extends Component{
 
     render(){
          return(
-            <LoginForm container onSubmit={this.handleSubmit}>
-                <HeaderWrapper>
-                     Sign in
-                </HeaderWrapper>
-                <FormFieldWrapper>
-                    <SpanWrapper><AccountCircle/></SpanWrapper>
-                    <InputWrapper type={"text"} placeholder="Enter username"/>
-                </FormFieldWrapper>
-                <FormFieldWrapper>
-                    <SpanWrapper><Lock/></SpanWrapper>
-                    <InputWrapper type={"password"} placeholder="Enter password"/>
-                </FormFieldWrapper>
-                <FooterWrapper>
-                    <p>New in A bit of Habit? <a href={'/signup'}> Create account</a></p>
-                </FooterWrapper>
-                <LoginButton>
-                        <East/>
-                </LoginButton>
-            </LoginForm>
+            <Container maxWidth="xs">
+                <LoginForm container>
+                    <Grid item xs={12}>
+                        <HeaderWrapper>
+                            Sign in
+                        </HeaderWrapper>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <FormFieldWrapper>
+                            <SpanWrapper><AccountCircle/></SpanWrapper>
+                            <InputWrapper type={"text"} placeholder="    Enter username"/>
+                        </FormFieldWrapper>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <FormFieldWrapper>
+                            <SpanWrapper><Lock/></SpanWrapper>
+                            <InputWrapper type={"password"} placeholder="     Enter password"/>
+                        </FormFieldWrapper>
+                    </Grid>
+                    <Grid container >
+                        <FooterLink item xs={8}>
+                            <LinkWrapper>
+                                <p>New in A bit of Habit? <a href={'/signup'}> Create account</a></p>
+                            </LinkWrapper>
+                        </FooterLink>
+                        <FooterButton item xs={4}>
+                            <LoginButton><East/></LoginButton>
+                        </FooterButton>
+                    </Grid>
+                </LoginForm>
+            </Container>
         )
     }
 }

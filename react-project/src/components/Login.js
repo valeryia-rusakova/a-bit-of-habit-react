@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Component} from "react";
-import "../css-common";
 import {Container, Grid} from "@material-ui/core";
 import {AccountCircle, Lock} from "@material-ui/icons";
 import {East} from "@mui/icons-material";
@@ -13,7 +12,7 @@ import {
     LoginButton,
     LoginForm,
     SpanWrapper
-} from "../css-common";
+} from "../css/auth";
 
 
 export default class Login extends Component{

@@ -54,10 +54,10 @@ export default function Profile(){
                     </Grid>
                     <Grid item>
                          <Container maxWidth="lg">
-                             <Grid container lg={12} spacing={4}>
+                             <Grid container spacing={4}>
                                  <Grid item lg={6} xs={12}>
-                                    <PersonalInfo container xs={12} direction="column">
-                                        <TitleInfoBlock container xs={12}>
+                                    <PersonalInfo container direction="column">
+                                        <TitleInfoBlock container>
                                             <Grid item sm={12} xs={12}><p className="username">Aleria</p></Grid>
                                             <Grid item sm={5} xs={12}><p className="username">Rusakova Valeryia</p></Grid>
                                             <Grid item sm={7} xs={12}><p className="email">valeria.rusakova953@gmail.com</p></Grid>
@@ -72,27 +72,27 @@ export default function Profile(){
                                          <TitleBlock item>
                                              <p>In progress:</p>
                                          </TitleBlock>
-                                         <HabitItem item lg={6} xs={12} direction="row" alignItems="center" justifyContent="space-evenly">
+                                         <HabitItem item lg={6} xs={12} alignItems="center" justifyContent="space-evenly">
                                              <Grid item xs={3} md={2} lg={3}><div className="image"><img src={SmokingHabit} alt="habit"/></div></Grid>
                                              <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Smoking cigarettes</p></Grid>
                                              <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
                                          </HabitItem>
-                                         <HabitItem item lg={6} xs={12} direction="row" alignItems="center">
+                                         <HabitItem item lg={6} xs={12} alignItems="center">
                                              <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Sport} alt="habit"/></div></Grid>
                                              <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Sport</p></Grid>
                                              <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
                                          </HabitItem>
-                                         <HabitItem item lg={6} xs={12} direction="row" alignItems="center">
+                                         <HabitItem item lg={6} xs={12} alignItems="center">
                                              <Grid item xs={3} md={2} lg={3}><div className="image"><img src={JunkFood} alt="habit"/></div></Grid>
                                              <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Junk food</p></Grid>
                                              <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
                                          </HabitItem>
-                                         <HabitItem item lg={6} xs={12} direction="row" alignItems="center">
+                                         <HabitItem item lg={6} xs={12} alignItems="center">
                                              <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Fruits} alt="habit"/></div></Grid>
                                              <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Fruits and Vegetables</p></Grid>
                                              <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
                                          </HabitItem>
-                                         <HabitItem item lg={6} xs={12} direction="row" alignItems="center">
+                                         <HabitItem item lg={6} xs={12} alignItems="center">
                                              <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Steps} alt="habit"/></div></Grid>
                                              <Grid item xs={5} md={6} lg={5}><p className="habitTitle">10000 steps a day</p></Grid>
                                              <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>

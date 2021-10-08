@@ -76,12 +76,25 @@ ul li ul li {
 }
 
 @media screen and (max-width: 392px) {
+    display: contents;
+    #firstItem a{
+        margin-inline:0;
+    }
+    ul {
+        display: none;
+    }
     label{
         display: inline-block;
         margin-block: 0.75rem;
     }
     ul li {
         text-align: right;
+    }
+    .menuItem{
+        margin-inline: 0;
+    }
+    ul li ul {
+        right: 0;
     }
     input[type="checkbox"]:checked ~ label + ul {
         display: grid;
@@ -99,12 +112,37 @@ ul li ul li {
 
 @media screen and (min-width: 392px) and (max-width: 535px){
     font-size: 0.85rem;
+    display: contents;
+    #firstItem a{
+        margin-inline:0;
+    }
+    label{
+        display: grid;
+        margin-block: 0.75rem;
+    }
+    ul {
+        display: none;
+    }
     ul li {
         text-align: center;
+    }
+    .menuItem{
+        margin-inline: 0;
+    }
+    ul li ul {
+        right: 0;
     }
     ul li a{
         padding-inline: 0.5rem;
         padding-block:1.4rem;
+    }
+    input[type="checkbox"]:checked ~ label + ul {
+        width: -webkit-fill-available;
+        display: flex;
+        justify-content: space-between;
+    }
+    ul li a:hover{
+        opacity:0.5;
     }
 }
 

@@ -45,7 +45,7 @@ export const LinkWrapper = styled.div`
 export const SpanWrapper = styled.span`
     vertical-align: middle;
     svg{
-    color: var(--main-light-color);;
+    color: var(--main-light-color);
     }
 `
 
@@ -95,7 +95,7 @@ export const SignupButton = styled.button`
         font-size: 0.875rem;
     }
     svg{
-    color: var(--main-light-color);;
+    color: var(--main-light-color);
     } 
 `
 

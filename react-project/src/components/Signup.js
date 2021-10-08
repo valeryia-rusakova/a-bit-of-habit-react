@@ -13,7 +13,7 @@ import {
     FooterButton,
     SignupButton,
     SignupForm
-} from "../css-common";
+} from "../css/auth";
 
 
 
@@ -97,5 +97,5 @@ export default class Signup extends Component{
                 </SignupForm>
             </Container>
         )
-        }
     }
+}

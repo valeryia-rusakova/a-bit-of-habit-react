@@ -1,13 +1,13 @@
 import * as React from 'react';
 import "../css/colors.css";
 import {
-    CheckButton, Footer,
+    CheckButton,
     HabitItem,
     HabitsProgress,
-    LogoImage,
-    LogoText,
-    NavMenu, PersonalInfo,
-    TitleBlock, TitleInfoBlock, TotalAchievements,
+    PersonalInfo,
+    TitleBlock,
+    TitleInfoBlock,
+    TotalAchievements,
 } from "../css/profile";
 import {AppBar, Container, CssBaseline, Grid} from "@material-ui/core";
 import DehazeIcon from '@mui/icons-material/Dehaze';
@@ -16,6 +16,7 @@ import JunkFood from "../images/food.svg";
 import Sport from "../images/sport.svg";
 import Fruits from "../images/fruits.svg";
 import Steps from "../images/steps.svg";
+import {Footer, LogoImage, LogoText, NavMenu} from "../css/common-style";
 
 
 export default function Profile(){

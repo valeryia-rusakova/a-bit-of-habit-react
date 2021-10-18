@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavMenu = styled.nav`
+export const HeaderItems = styled.nav`
     background: var(--main-bg-title-color);
     color: var(--main-light-color);;
     font-family: Montserrat;
@@ -21,7 +21,8 @@ ul li{
   position:relative;
   float:left;
   display:inline-block;
-
+  padding: 0;
+  width: auto;
 }
 
 ul li a{
@@ -204,9 +205,13 @@ export const LogoImage = styled.div`
 
 export const LogoText = styled.div`
     display: inline-block;
-    color: var(--main-light-color);
     margin: 0rem;
+    a{
+        color: var(--main-light-color);
+        text-decoration: none;
+    }
     p{
+        
         font-family: Montserrat;
         font-weight: bold;
         font-size: 1rem;

@@ -13,11 +13,11 @@ import {
     FooterButton,
     SignupButton,
     SignupForm
-} from "../../css/auth";
+} from "../css/auth";
 
 
 
-export default class SignupPage extends Component{
+export default class Signup extends Component{
     constructor(props) {
         super(props);
         this.handleUsernameChange = this.handleUsernameChange.bind(this);

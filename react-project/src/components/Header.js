@@ -1,11 +1,12 @@
-import {AppBar, Container, Grid} from "@material-ui/core";
-import {LogoImage, LogoText, NavMenu} from "../css/header";
+import {AppBar, Container, Grid, List} from "@material-ui/core";
+import {HeaderItems, LogoImage, LogoText} from "../css/header";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import * as React from "react";
+import {Link} from "react-router-dom";
+import {ListItem} from "@mui/material";
 
 function Header() {
     return (
-        <React.Fragment>
             <Grid item>
                  <AppBar position="fixed" style={{background: 'var(--main-bg-title-color)'}}>
                      <Container maxWidth="lg">
@@ -15,28 +16,27 @@ function Header() {
                                 </div>
                              </LogoImage>
                              <LogoText item >
-                                <p>A bit of Habit</p>
+                                <Link to="/posts"><p>A bit of Habit</p></Link>
                              </LogoText>
-                             <NavMenu>
+                             <HeaderItems>
                                 <input type="checkbox" name="menu" id="btn-menu"/>
                                 <label htmlFor="btn-menu"><DehazeIcon/></label>
-                             <ul>
-                                 <li id="firstItem" className="menuItem"><a href="/login">Habbits</a></li>
-                                 <li className="menuItem"><a href="/login">My posts</a></li>
-                                 <li className="menuItem"><a href="/login">My achievements</a></li>
-                                 <li className="menuItem">
-                                     <a href="/profile">Account</a>
-                                     <ul>
-                                        <li><a href="/login">Settings</a></li>
-                                        <li><a href="/login">Log out</a></li>
-                                     </ul>
-                                 </li>
-                             </ul>
-                             </NavMenu>
+                                <List>
+                                 <ListItem id="firstItem" className="menuItem"><Link to="/profile">Habbits</Link></ListItem>
+                                 <ListItem className="menuItem"><Link to="/profile">My posts</Link></ListItem>
+                                 <ListItem className="menuItem"><Link to="/profile">My achievements</Link></ListItem>
+                                 <ListItem className="menuItem">
+                                     <Link to="/profile">Account</Link>
+                                     <List>
+                                        <ListItem><Link to="/login">Settings</Link></ListItem>
+                                        <ListItem><Link to="/signup">Log out</Link></ListItem>
+                                     </List>
+                                 </ListItem>
+                                </List>
+                             </HeaderItems>
                      </Container>
                  </AppBar>
             </Grid>
-        </React.Fragment>
     );
 }
 

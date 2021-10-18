@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import {BrowserRouter} from "react-router-dom";
+import {MainRoutes} from './MainRoutes';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {AuthRoutes} from "./AuthRoutes";
+
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+    <BrowserRouter>
+        <Switch>
+          <Route path="/(login|signup)" component={AuthRoutes} />
+          <Route component={MainRoutes} />
+        </Switch>
+    </BrowserRouter>,
   document.getElementById("root")
 );
+
+

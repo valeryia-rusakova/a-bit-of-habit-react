@@ -12,10 +12,10 @@ import {
     LoginButton,
     LoginForm,
     SpanWrapper
-} from "../../css/auth";
+} from "../css/auth";
 
 
-export default class LoginPage extends Component{
+export default class Login extends Component{
     constructor(props) {
         super(props);
             this.handleUsernameChange = this.handleUsernameChange.bind(this);

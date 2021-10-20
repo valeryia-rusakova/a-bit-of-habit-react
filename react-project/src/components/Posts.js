@@ -1,6 +1,7 @@
 import {Container, Grid} from "@material-ui/core";
 import * as React from "react";
 import {PostAuthor, PostBody, PostButton, PostContainer, PostItem, PostTitle} from "../css/posts";
+import {Link} from "react-router-dom";
 
 function Posts() {
     return (
@@ -27,7 +28,7 @@ function Posts() {
                              <Grid item>
                                 <PostButton>
                                     <p>
-                                        Read more
+                                        <Link to="/post">Read more</Link>
                                     </p>
                                 </PostButton>
                              </Grid>
@@ -51,7 +52,7 @@ function Posts() {
                              <Grid item>
                                 <PostButton>
                                     <p>
-                                        Read more
+                                         <Link to="/post">Read more</Link>
                                     </p>
                                 </PostButton>
                              </Grid>
@@ -75,7 +76,7 @@ function Posts() {
                              <Grid item>
                                 <PostButton>
                                     <p>
-                                        Read more
+                                         <Link to="/post">Read more</Link>
                                     </p>
                                 </PostButton>
                              </Grid>

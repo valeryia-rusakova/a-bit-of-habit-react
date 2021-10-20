@@ -9,7 +9,23 @@ import {
     PostItems,
     PostTitle
 } from "../css/posts";
-import {CommentAuthor, CommentBody, CommentContainer, CommentItem} from "../css/comments";
+import {CommentAuthor, CommentBody, CommentItem, CommentList} from "../css/comments";
+import {CommentsList} from "../mocks/CommentsList";
+
+const listItems = CommentsList.slice(0,4).map((comment)=>{
+    return(
+    <CommentItem>
+        <Grid container direction="column">
+            <Grid item xs={12}>
+                <CommentAuthor>{comment.author}</CommentAuthor>
+            </Grid>
+            <Grid item xs={12}>
+                <CommentBody>{comment.body}</CommentBody>
+            </Grid>
+        </Grid>
+    </CommentItem>
+    );
+});
 
 function Post() {
     return (
@@ -46,32 +62,9 @@ function Post() {
                              </PostComment>
                          </PostItem>
                      </PostItems>
-                     <CommentContainer>
-                         <CommentItem item>
-                             <CommentAuthor item>
-                                Cameron Williamson
-                             </CommentAuthor>
-                             <CommentBody>
-                                It's not that big a deal.
-                             </CommentBody>
-                         </CommentItem>
-                         <CommentItem item>
-                             <CommentAuthor item>
-                                Wade Warren
-                             </CommentAuthor>
-                             <CommentBody>
-                                It's not that big a deal.
-                             </CommentBody>
-                         </CommentItem>
-                         <CommentItem item>
-                             <CommentAuthor item>
-                                Leslie Alexander
-                             </CommentAuthor>
-                             <CommentBody>
-                                It's not that big a deal.
-                             </CommentBody>
-                         </CommentItem>
-                     </CommentContainer>
+                     <CommentList>
+                         {listItems}
+                     </CommentList>
                  </Container>
             </Grid>
         </React.Fragment>

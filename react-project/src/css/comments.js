@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import {Grid} from "@material-ui/core";
+import {Grid, List, ListItem} from "@material-ui/core";
 
-export const CommentItem = styled(Grid)`
+export const CommentItem = styled(ListItem)`
     background: var(--default-white-color);
     padding-block:0.8rem;
 `
 
-export const CommentContainer = styled(Grid)`
+export const CommentList = styled(List)`
     margin-bottom:3rem;
 `
 

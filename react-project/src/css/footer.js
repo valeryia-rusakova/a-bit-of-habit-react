@@ -6,6 +6,12 @@ export const FooterWrapper = styled.footer`
     font-family: Montserrat;
     font-weight: 500;
     font-size: 1rem;
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
     p{
         color: var(--main-light-color);
         margin: 0;

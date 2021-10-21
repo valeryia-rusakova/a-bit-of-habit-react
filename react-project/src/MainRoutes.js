@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Posts from "./components/Posts";
 import Post from "./components/Post";
 import {CssBaseline, Grid} from "@material-ui/core";
+import Achievements from "./components/Achievements";
 
 
 export const MainRoutes = () => (
@@ -16,6 +17,7 @@ export const MainRoutes = () => (
                 <Route path="/posts" component={Posts} />
                 <Route path="/profile" component={Profile} />
                 <Route path="/post" component={Post} />
+                <Route path="/achievements" component={Achievements} />
             </Switch>
             <Footer />
         </Grid>

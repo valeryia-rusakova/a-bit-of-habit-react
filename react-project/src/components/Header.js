@@ -24,7 +24,7 @@ function Header() {
                                 <List>
                                  <ListItem id="firstItem" className="menuItem"><Link to="/profile">Habbits</Link></ListItem>
                                  <ListItem className="menuItem"><Link to="/profile">My posts</Link></ListItem>
-                                 <ListItem className="menuItem"><Link to="/profile">My achievements</Link></ListItem>
+                                 <ListItem className="menuItem"><Link to="/achievements">My achievements</Link></ListItem>
                                  <ListItem className="menuItem">
                                      <Link to="/profile">Account</Link>
                                      <List>

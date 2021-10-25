@@ -7,6 +7,7 @@ import Posts from "./components/Posts";
 import Post from "./components/Post";
 import {CssBaseline, Grid} from "@material-ui/core";
 import Achievements from "./components/Achievements";
+import Habits from "./components/Habits";
 
 
 export const MainRoutes = () => (
@@ -18,6 +19,7 @@ export const MainRoutes = () => (
                 <Route path="/profile" component={Profile} />
                 <Route path="/post" component={Post} />
                 <Route path="/achievements" component={Achievements} />
+                <Route path="/habits" component={Habits} />
             </Switch>
             <Footer />
         </Grid>

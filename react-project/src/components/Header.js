@@ -22,7 +22,7 @@ function Header() {
                                 <input type="checkbox" name="menu" id="btn-menu"/>
                                 <label htmlFor="btn-menu"><DehazeIcon/></label>
                                 <List>
-                                 <ListItem id="firstItem" className="menuItem"><Link to="/profile">Habbits</Link></ListItem>
+                                 <ListItem id="firstItem" className="menuItem"><Link to="/habits">Habits</Link></ListItem>
                                  <ListItem className="menuItem"><Link to="/profile">My posts</Link></ListItem>
                                  <ListItem className="menuItem"><Link to="/achievements">My achievements</Link></ListItem>
                                  <ListItem className="menuItem">

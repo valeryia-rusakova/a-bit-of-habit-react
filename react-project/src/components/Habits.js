@@ -28,7 +28,7 @@ function Habits() {
             <Grid item>
                  <Container maxWidth="lg">
                      <Grid container justifyContent="flex-end">
-                         <DropDown item xs={2}>
+                         <DropDown item xs={12} sm={6} md={3} lg={2}>
                             <HabitChoice fullWidth>
                                       <Select defaultValue={'Healthy'}>
                                         <MenuItem value={'Healthy'}>Healthy</MenuItem>

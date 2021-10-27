@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Grid} from "@material-ui/core";
 import "./colors.css";
+import "./general.css";
 
 export const HeaderWrapper = styled.header`
     font-family: Montserrat;

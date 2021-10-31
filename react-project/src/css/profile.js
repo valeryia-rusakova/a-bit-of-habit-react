@@ -48,6 +48,9 @@ export const TitleInfoBlock = styled(Grid)`
             margin-left:0.6rem;
             text-align:left;
         }
+        .username{
+            font-size: 1rem;
+        }
     }
 `
 

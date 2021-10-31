@@ -16,6 +16,7 @@ export const PostItems = styled(Grid)`
 
 export const PostTitle = styled(Grid)`
     text-align: justify;
+    margin-top: 1.13rem;
     background:var(--extra-bg-title-color);
     p{
         color: var(--main-light-color);
@@ -92,7 +93,7 @@ export const PostAuthor = styled(Grid)`
         font-style: normal;
         font-size: 1rem;
         margin-left: 0.6rem;
-        margin-block: 0.5rem;
+        margin-top: 0.5rem;
     }
 `
 
@@ -108,7 +109,7 @@ export const PostButton = styled.button`
     background:var(--main-btn-color);
     font-family: Montserrat;
     font-weight: 400;
-    weight: 7.25rem;
+    width: 6.5rem;
     height: 2.375rem;
     font-size: 0.875rem;
     p{

@@ -85,15 +85,21 @@ export const SignupButton = styled.button`
     float: right;
     border-radius: 0.5rem;
     border: none;
+    cursor: pointer;
     p { 
         display: block;
-        margin: 0.5rem;
-        text-decoration: none;
-        color: var(--main-light-color);;
+        margin: 0.5rem;   
         font-family: Montserrat;
         font-style: normal;
         font-weight: 400;
         font-size: 0.875rem;
+        a{
+            text-decoration: none;
+            color: var(--main-light-color);
+        }
+    }
+    :hover{
+        background: var(--button-hover-color);
     }
     svg{
     color: var(--main-light-color);

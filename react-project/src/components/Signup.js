@@ -14,6 +14,7 @@ import {
     SignupButton,
     SignupForm
 } from "../css/auth";
+import {Link} from "react-router-dom";
 
 
 
@@ -84,13 +85,13 @@ export default class Signup extends Component{
                         <FooterLink item xs={6}>
                             <LinkWrapper>
                                 <p>Already have an account?<br/>
-                                <a href={'/login'}> Sign in</a>
+                                <Link to="/login"> Sign in</Link>
                                 </p>
                             </LinkWrapper>
                         </FooterLink>
                     <FooterButton item xs={6}>
                         <SignupButton>
-                            <p>Sign up</p><East/>
+                            <p><Link to="/login">Sign up</Link></p><East/>
                         </SignupButton>
                     </FooterButton>
                     </Grid>

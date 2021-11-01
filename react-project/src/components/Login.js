@@ -13,6 +13,7 @@ import {
     LoginForm,
     SpanWrapper
 } from "../css/auth";
+import {Link} from "react-router-dom";
 
 
 export default class Login extends Component{
@@ -63,11 +64,13 @@ export default class Login extends Component{
                     <Grid container >
                         <FooterLink item xs={8}>
                             <LinkWrapper>
-                                <p>New in A bit of Habit? <a href={'/signup'}> Create account</a></p>
+                                <p>New in A bit of Habit? <Link to="/signup"> Create account</Link></p>
                             </LinkWrapper>
                         </FooterLink>
                         <FooterButton item xs={4}>
-                            <LoginButton><East/></LoginButton>
+                            <LoginButton>
+                                    <Link to="/signup"><East/></Link>
+                            </LoginButton>
                         </FooterButton>
                     </Grid>
                 </LoginForm>

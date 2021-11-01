@@ -16,14 +16,14 @@ function Header() {
                                 </div>
                              </LogoImage>
                              <LogoText item >
-                                <Link to="/posts"><p>A bit of Habit</p></Link>
+                                <Link to="/main"><p>A bit of Habit</p></Link>
                              </LogoText>
                              <HeaderItems>
                                 <input type="checkbox" name="menu" id="btn-menu"/>
                                 <label htmlFor="btn-menu"><DehazeIcon/></label>
                                 <List>
                                  <ListItem id="firstItem" className="menuItem"><Link to="/habits">Habits</Link></ListItem>
-                                 <ListItem className="menuItem"><Link to="/profile">My posts</Link></ListItem>
+                                 <ListItem className="menuItem"><Link to="/posts">My posts</Link></ListItem>
                                  <ListItem className="menuItem"><Link to="/achievements">My achievements</Link></ListItem>
                                  <ListItem className="menuItem">
                                      <Link to="/profile">Account</Link>

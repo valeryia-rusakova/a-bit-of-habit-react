@@ -97,10 +97,7 @@ export const SignupButton = styled.button`
         font-style: normal;
         font-weight: 400;
         font-size: 0.875rem;
-        a{
-            text-decoration: none;
-            color: var(--main-light-color);
-        }
+        color: var(--main-light-color);
     }
     :hover{
         background: var(--button-hover-color);
@@ -110,6 +107,6 @@ export const SignupButton = styled.button`
     } 
 `
 
-export const SignupForm = styled(Grid)`
+export const SignupForm = styled.form`
      margin-block: 9rem;
 `

@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {Component, useState} from "react";
-
+import {useState} from "react";
 import { connect } from 'react-redux';
-
 import {Redirect} from "react-router-dom";
 import { login } from '../actions/auth';
+import {Container, Grid} from "@material-ui/core";
+import {Email, Lock} from "@material-ui/icons";
+import {East} from "@mui/icons-material";
 import {
     FooterButton,
     FooterLink,
@@ -15,9 +16,7 @@ import {
     LoginForm,
     SpanWrapper
 } from "../css/auth";
-import {Container, Grid} from "@material-ui/core";
-import {AccountCircle, Lock} from "@material-ui/icons";
-import {East} from "@mui/icons-material";
+
 
 const Login = ({ login, isAuthenticated }) => {
     const [formData, setFormData] = useState({
@@ -49,14 +48,14 @@ const Login = ({ login, isAuthenticated }) => {
                 </Grid>
                 <Grid item xs={12}>
                     <FormFieldWrapper>
-                        <SpanWrapper><AccountCircle/></SpanWrapper>
+                        <SpanWrapper><Email/></SpanWrapper>
                         <InputWrapper
                             type='email'
                             name='email'
                             value={email}
                             onChange={e => onChange(e)}
                             required
-                            placeholder="    Enter username"/>
+                            placeholder="         Enter email"/>
                     </FormFieldWrapper>
                 </Grid>
                 <Grid item xs={12}>
@@ -69,7 +68,7 @@ const Login = ({ login, isAuthenticated }) => {
                             onChange={e => onChange(e)}
                             minLength='6'
                             required
-                            placeholder="     Enter password"/>
+                            placeholder="      Enter password"/>
                     </FormFieldWrapper>
                 </Grid>
                 <Grid container >

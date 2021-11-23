@@ -50,7 +50,7 @@ export const SpanWrapper = styled.span`
     }
 `
 
-export const LoginForm = styled(Grid)`
+export const LoginForm = styled.form`
      margin-block: 12rem;
 `
 
@@ -68,11 +68,15 @@ export const LoginButton = styled.button`
     background-color: var(--main-btn-color);
     width: 2.8125rem;
     height: 2.8125rem;
+    cursor: pointer;
     float: right;
     border-radius: 0.5rem;
     border: none;
     svg{
-    color: var(--main-light-color);;
+    color: var(--main-light-color);
+    }
+    :hover{
+        background: var(--button-hover-color);
     }
 `
 

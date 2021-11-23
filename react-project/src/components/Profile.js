@@ -14,8 +14,10 @@ import Sport from "../images/sport.svg";
 import JunkFood from "../images/food.svg";
 import Fruits from "../images/fruits.svg";
 import Steps from "../images/steps.svg";
+import {connect} from "react-redux";
 
-function Profile() {
+function Profile({user}) {
+
     return (
         <React.Fragment>
             <Grid item>
@@ -24,9 +26,8 @@ function Profile() {
                          <Grid item lg={6} xs={12}>
                             <PersonalInfo container direction="column">
                                 <TitleInfoBlock container>
-                                    <Grid item sm={12} xs={12}><p className="username">Aleria</p></Grid>
-                                    <Grid item sm={5} xs={12}><p className="username">Rusakova Valeryia</p></Grid>
-                                    <Grid item sm={7} xs={12}><p className="email">valeria.rusakova953@gmail.com</p></Grid>
+                                    <Grid item sm={6} xs={12}><p className="username">{user.username}</p></Grid>
+                                    <Grid item sm={6} xs={12}><p className="email">{user.email}</p></Grid>
                                 </TitleInfoBlock>
                                 <TotalAchievements item>
                                     <p>Achievements: 11</p>
@@ -72,4 +73,8 @@ function Profile() {
     );
 }
 
-export default Profile;
+const mapStateToProps = state => ({
+    user: state.auth.user
+});
+
+export default connect(mapStateToProps,)(Profile);

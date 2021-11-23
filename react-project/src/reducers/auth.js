@@ -29,6 +29,20 @@ export default function(state = initialState, action) {
                 isAuthenticated: false,
                 user: null
             }
+        case SIGNUP_SUCCESS:
+            return {
+                ...state,
+                isAuthenticated: false
+            }
+        case SIGNUP_FAIL:
+        case LOGOUT:
+            localStorage.removeItem('token');
+            return {
+                ...state,
+                token: null,
+                isAuthenticated: false,
+                user: null
+            }
         default:
             return state;
     }

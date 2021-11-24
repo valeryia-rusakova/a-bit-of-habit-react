@@ -37,7 +37,7 @@ export const signup = (username, email, password) => async dispatch => {
     const body = JSON.stringify({ username, email, password});
 
     try {
-        const res = await axios.post(`${process.env.apiHost}/users/`, body, config);
+        const res = await axios.post(`${configData.API_HOST}/users/`, body, config);
 
         dispatch({
             type: SIGNUP_SUCCESS,

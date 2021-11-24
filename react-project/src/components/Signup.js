@@ -1,8 +1,11 @@
-import {Component} from "react";
+import {useState} from "react";
 import {AccountCircle, Email, Lock} from "@material-ui/icons";
 import {East} from "@mui/icons-material";
 import {Container, Grid} from "@material-ui/core";
 import * as React from "react";
+import {Link, Redirect} from "react-router-dom";
+import { connect } from 'react-redux';
+import {signup} from "../actions/auth";
 import {
     FormFieldWrapper,
     HeaderWrapper,
@@ -14,89 +17,112 @@ import {
     SignupButton,
     SignupForm
 } from "../css/auth";
-import {Link} from "react-router-dom";
 
 
+const Signup = ({ signup, isAuthenticated }) => {
+    const [accountCreated, setAccountCreated] = useState(false);
+    const [formData, setFormData] = useState({
+        username: '',
+        email: '',
+        password: '',
+        re_password: ''
+    });
 
-export default class Signup extends Component{
-    constructor(props) {
-        super(props);
-        this.handleUsernameChange = this.handleUsernameChange.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.state = {
-            username: '',
-            email: '',
-            password: '',
-        };
+    const { username, email, password, re_password } = formData;
+
+    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+        if (password === re_password) {
+            signup(username, email, password, re_password);
+            setAccountCreated(true);
+        }
+    };
+
+    if (isAuthenticated) {
+        return <Redirect to='/' />
+    }
+    if (accountCreated) {
+        return <Redirect to='/login' />
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-    }
-
-    handleUsernameChange(event) {
-        this.setState({username: event.target.value});
-    }
-
-    handleEmailChange(event) {
-        this.setState({email: event.target.value});
-    }
-
-    handlePasswordChange(event) {
-        this.setState({password: event.target.value});
-    }
-
-    render(){
-        return(
-            <Container maxWidth="xs">
-                <SignupForm container>
-                    <Grid item xs={12}>
-                        <HeaderWrapper>
-                            Sign up
-                        </HeaderWrapper>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <FormFieldWrapper>
-                            <SpanWrapper><AccountCircle/></SpanWrapper>
-                            <InputWrapper type={"text"} placeholder=" Enter username"/>
-                        </FormFieldWrapper>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <FormFieldWrapper>
-                            <SpanWrapper><Email/></SpanWrapper>
-                            <InputWrapper type={"email"} placeholder=" Enter email"/>
-                        </FormFieldWrapper>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <FormFieldWrapper>
-                            <SpanWrapper><Lock/></SpanWrapper>
-                            <InputWrapper type={"password"} placeholder=" Enter password"/>
-                        </FormFieldWrapper>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <FormFieldWrapper>
-                            <SpanWrapper><Lock/></SpanWrapper>
-                            <InputWrapper type={"password"} placeholder=" Confirm password"/>
-                        </FormFieldWrapper>
-                    </Grid>
-                    <Grid container >
-                        <FooterLink item xs={6}>
-                            <LinkWrapper>
-                                <p>Already have an account?<br/>
-                                <Link to="/login"> Sign in</Link>
-                                </p>
-                            </LinkWrapper>
-                        </FooterLink>
-                    <FooterButton item xs={6}>
-                        <SignupButton>
-                            <p><Link to="/login">Sign up</Link></p><East/>
-                        </SignupButton>
-                    </FooterButton>
-                    </Grid>
-                </SignupForm>
-            </Container>
-        )
-    }
+    return(
+        <Container maxWidth="xs">
+            <SignupForm onSubmit={e => onSubmit(e)}>
+                <Grid item xs={12}>
+                    <HeaderWrapper>
+                        Sign up
+                    </HeaderWrapper>
+                </Grid>
+                <Grid item xs={12}>
+                    <FormFieldWrapper>
+                        <SpanWrapper><AccountCircle/></SpanWrapper>
+                        <InputWrapper
+                            name='username'
+                            value={username}
+                            onChange={e => onChange(e)}
+                            placeholder=" Enter username"
+                            required/>
+                    </FormFieldWrapper>
+                </Grid>
+                <Grid item xs={12}>
+                    <FormFieldWrapper>
+                        <SpanWrapper><Email/></SpanWrapper>
+                        <InputWrapper
+                            name='email'
+                            value={email}
+                            onChange={e => onChange(e)}
+                            placeholder=" Enter email"
+                            required/>
+                    </FormFieldWrapper>
+                </Grid>
+                <Grid item xs={12}>
+                    <FormFieldWrapper>
+                        <SpanWrapper><Lock/></SpanWrapper>
+                        <InputWrapper
+                            type='password'
+                            name='password'
+                            value={password}
+                            onChange={e => onChange(e)}
+                            placeholder=" Enter password"
+                            required/>
+                    </FormFieldWrapper>
+                </Grid>
+                <Grid item xs={12}>
+                    <FormFieldWrapper>
+                        <SpanWrapper><Lock/></SpanWrapper>
+                        <InputWrapper
+                            type='password'
+                            name='re_password'
+                            value={re_password}
+                            onChange={e => onChange(e)}
+                            placeholder=" Confirm password"
+                        />
+                    </FormFieldWrapper>
+                </Grid>
+                <Grid container >
+                    <FooterLink item xs={6}>
+                        <LinkWrapper>
+                            <p>Already have an account?<br/>
+                            <Link to="/login"> Sign in</Link>
+                            </p>
+                        </LinkWrapper>
+                    </FooterLink>
+                <FooterButton item xs={6}>
+                    <SignupButton type='submit'>
+                        <p>Sign up</p><East/>
+                    </SignupButton>
+                </FooterButton>
+                </Grid>
+            </SignupForm>
+        </Container>
+    )
 }
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { signup })(Signup);

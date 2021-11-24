@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState} from "react";
 import { connect } from 'react-redux';
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import { login } from '../actions/auth';
 import {Container, Grid} from "@material-ui/core";
 import {Email, Lock} from "@material-ui/icons";
@@ -74,7 +74,7 @@ const Login = ({ login, isAuthenticated }) => {
                 <Grid container >
                     <FooterLink item xs={8}>
                         <LinkWrapper>
-                            <p>New in A bit of Habit? <a href={'/signup'}> Create account</a></p>
+                            <p>New in A bit of Habit? <Link to="/signup"> Create account</Link></p>
                         </LinkWrapper>
                     </FooterLink>
                     <FooterButton item xs={4}>

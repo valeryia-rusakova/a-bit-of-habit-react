@@ -4,8 +4,14 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 import * as React from "react";
 import {Link} from "react-router-dom";
 import {ListItem} from "@mui/material";
+import {logout} from "../actions/auth";
+import {connect} from "react-redux";
 
-function Header() {
+const Header = ({logout}) => {
+    const logout_account = () =>{
+        logout();
+    };
+
     return (
             <Grid item>
                  <AppBar position="fixed" style={{background: 'var(--main-bg-title-color)'}}>
@@ -29,7 +35,7 @@ function Header() {
                                      <Link to="/profile">Account</Link>
                                      <List>
                                         <ListItem><Link to="/login">Settings</Link></ListItem>
-                                        <ListItem><Link to="/signup">Log out</Link></ListItem>
+                                        <ListItem><Link to="/login" onClick={logout_account}>Log out</Link></ListItem>
                                      </List>
                                  </ListItem>
                                 </List>
@@ -40,4 +46,8 @@ function Header() {
     );
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { logout })(Header);

@@ -16,7 +16,6 @@ export const PostItems = styled(Grid)`
 
 export const PostTitle = styled(Grid)`
     text-align: justify;
-    margin-top: 1.13rem;
     background:var(--extra-bg-title-color);
     p{
         color: var(--main-light-color);
@@ -94,6 +93,7 @@ export const PostAuthor = styled(Grid)`
         font-size: 1rem;
         margin-left: 0.6rem;
         margin-top: 0.5rem;
+        margin-bottom: 0;
     }
 `
 

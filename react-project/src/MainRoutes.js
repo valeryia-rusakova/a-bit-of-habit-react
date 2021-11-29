@@ -18,7 +18,7 @@ export const MainRoutes = () => (
             <Switch>
                 <Route path="/main" component={Posts} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/post" component={Post} />
+                <Route path="/posts/:postId" component={Post} />
                 <Route path="/achievements" component={Achievements} />
                 <Route path="/habits" component={Habits} />
                 <Route path="/posts" component={NewPost} />

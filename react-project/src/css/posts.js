@@ -115,6 +115,7 @@ export const PostButton = styled.button`
     p{
         margin: 0;
         text-align:center;
+        color:var(--main-light-color);
         a{
           text-decoration: none;
           color:var(--main-light-color);

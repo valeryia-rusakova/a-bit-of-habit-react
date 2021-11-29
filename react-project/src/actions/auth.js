@@ -1,9 +1,7 @@
-import {
-    LOGIN_SUCCESS,
-    LOGIN_FAIL, SIGNUP_SUCCESS, SIGNUP_FAIL, LOGOUT,
-} from "./types";
+
 import configData from "../config.json";
 import axios from "axios";
+import {authConstants} from "./types";
 
 
 export const login = (email, password) => async dispatch => {
@@ -17,12 +15,12 @@ export const login = (email, password) => async dispatch => {
         const res = await axios.post(`${configData.API_HOST}/users/login/`, body, config);
 
         dispatch({
-            type: LOGIN_SUCCESS,
+            type: authConstants.LOGIN_SUCCESS,
             payload: res.data
         });
     } catch (err) {
         dispatch({
-            type: LOGIN_FAIL
+            type: authConstants.LOGIN_FAIL
         })
     }
 };
@@ -40,18 +38,18 @@ export const signup = (username, email, password) => async dispatch => {
         const res = await axios.post(`${configData.API_HOST}/users/`, body, config);
 
         dispatch({
-            type: SIGNUP_SUCCESS,
+            type: authConstants.SIGNUP_SUCCESS,
             payload: res.data
         });
     } catch (err) {
         dispatch({
-            type: SIGNUP_FAIL
+            type: authConstants.SIGNUP_FAIL
         })
     }
 };
 
 export const logout = () => dispatch => {
     dispatch({
-        type: LOGOUT
+        type: authConstants.LOGOUT
     });
 };

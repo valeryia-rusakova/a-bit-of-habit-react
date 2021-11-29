@@ -1,10 +1,10 @@
 import {Container, Grid} from "@material-ui/core";
 import * as React from "react";
 import {PostAuthor, PostBody, PostButton, PostContainer, PostItem, PostTitle} from "../css/posts";
-import {Link} from "react-router-dom";
 import {get_all_posts} from "../actions/posts";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
+import {Link} from "react-router-dom";
 
 
 const Posts = () => {
@@ -13,7 +13,7 @@ const Posts = () => {
 
     useEffect(() => {
         dispatch(get_all_posts());
-        console.log(posts);
+        // eslint-disable-next-line
     }, []);
 
     return (
@@ -37,10 +37,8 @@ const Posts = () => {
                              </p>
                          </PostBody>
                          <Grid item>
-                            <PostButton>
-                                <p>
-                                    <Link to="/post">Read more</Link>
-                                </p>
+                             <PostButton>
+                                <p><Link to={`/posts/${post.id}`}>Read more</Link></p>
                             </PostButton>
                          </Grid>
                      </PostItem>)}

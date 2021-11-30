@@ -5,7 +5,6 @@ import {BodyInput, DialogTitleWrapper, NewBody, NewTitle, TitleInput} from "../c
 import * as React from "react";
 import {connect, useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {ToastContainer} from "react-toastify";
 
 
 function PersonalPostsList({update_post}) {
@@ -34,8 +33,7 @@ function PersonalPostsList({update_post}) {
 
     useEffect(() => {
         dispatch(get_all_posts());
-        // eslint-disable-next-line
-    }, []);
+    }, [dispatch]);
 
     const currentUser= useSelector(state => state.auth.user);
     const posts = useSelector(state => state.posts.allPosts);
@@ -103,7 +101,6 @@ function PersonalPostsList({update_post}) {
                     <DialogActions>
                         <PostButton onClick={handleClose}><p>Cancel</p></PostButton>
                         <PostButton onClick={handleClose} type='submit' ><p>Post</p></PostButton>
-                        <ToastContainer />
                     </DialogActions>
                 </form>
             </Dialog>

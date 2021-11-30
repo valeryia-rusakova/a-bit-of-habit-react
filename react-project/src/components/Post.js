@@ -39,8 +39,7 @@ const Post = ({match,isAuthenticated}) => {
 
     useEffect(() => {
         dispatch(get_post(postId));
-        // eslint-disable-next-line
-    }, []);
+    }, [dispatch, postId]);
 
     if (!isAuthenticated) {
         dispatch(logout());

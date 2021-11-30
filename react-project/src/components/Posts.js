@@ -1,10 +1,9 @@
 import {Container, Grid} from "@material-ui/core";
 import * as React from "react";
-import {PostAuthor, PostBody, PostButton, PostContainer, PostItem, PostTitle} from "../css/posts";
+import {PostAuthor, PostBody, PostLink, PostContainer, PostItem, PostTitle} from "../css/posts";
 import {get_all_posts} from "../actions/posts";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {Link} from "react-router-dom";
 
 
 const Posts = () => {
@@ -13,8 +12,7 @@ const Posts = () => {
 
     useEffect(() => {
         dispatch(get_all_posts());
-        // eslint-disable-next-line
-    }, []);
+    }, [dispatch]);
 
     return (
         <React.Fragment>
@@ -37,9 +35,7 @@ const Posts = () => {
                              </p>
                          </PostBody>
                          <Grid item>
-                             <PostButton>
-                                <p><Link to={`/posts/${post.id}`}>Read more</Link></p>
-                            </PostButton>
+                             <PostLink to={`/posts/${post.id}`}><p>Read more</p></PostLink>
                          </Grid>
                      </PostItem>)}
                      </PostContainer>

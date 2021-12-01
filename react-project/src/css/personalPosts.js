@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import {Grid, TextField} from "@material-ui/core";
+import {DialogTitle, Grid, TextField} from "@material-ui/core";
 
-export const NewPostWrapper = styled(Grid)`
+export const NewPostWrapper = styled.form`
     background: var(--main-light-color);
     .title{
       font-family: Montserrat;
@@ -11,6 +11,13 @@ export const NewPostWrapper = styled(Grid)`
       padding-top: 1rem;
       color: var(--main-dark-color);
     }
+`
+
+export const DialogTitleWrapper = styled(DialogTitle)`
+      font-family: Montserrat;
+      font-weight: bold;
+      font-size: 1.125rem;
+      color: var(--main-dark-color);
 `
 
 export const NewBody = styled(Grid)`
@@ -41,6 +48,7 @@ export const NewPostButton = styled.button`
     p{
         margin: 0;
         text-align:center;
+        color:var(--main-light-color);
         a{
           text-decoration: none;
           color:var(--main-light-color);

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {Grid, TextField} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 export const PostItem = styled(Grid)`
     margin-block: 2rem;
@@ -97,6 +98,32 @@ export const PostAuthor = styled(Grid)`
     }
 `
 
+export const PostLink = styled(Link)`
+    float: left;
+    border-radius: 0.5rem;
+    margin-inline: 0.6rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background:var(--main-btn-color);
+    font-family: Montserrat;
+    font-weight: 400;
+    width: 6.5rem;
+    height: 2.375rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color:var(--main-light-color);
+    p{
+      margin: 0;
+      margin-block: 0.5rem;
+    }
+    :hover{
+        background: var(--button-hover-color);
+    }
+`
+
 export const PostButton = styled.button`
     float: left;
     border-radius: 0.5rem;
@@ -115,6 +142,7 @@ export const PostButton = styled.button`
     p{
         margin: 0;
         text-align:center;
+        color:var(--main-light-color);
         a{
           text-decoration: none;
           color:var(--main-light-color);

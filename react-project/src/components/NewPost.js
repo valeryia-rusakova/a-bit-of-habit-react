@@ -74,13 +74,13 @@ function NewPost({add_post, isAuthenticated}) {
                                         value={header}
                                         onChange={e => onChange(e)}
                                         label="Enter the title"
-                                        fullWidth="true"
+                                        fullWidth={true}
                                         required/>
                                 </NewTitle>
                                 <NewBody item>
                                     <BodyInput
                                         label="What would you like to write?"
-                                        fullWidth="true"
+                                        fullWidth={true}
                                         name='body'
                                         value={body}
                                         onChange={e => onChange(e)}

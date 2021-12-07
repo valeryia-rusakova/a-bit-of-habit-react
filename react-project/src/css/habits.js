@@ -16,7 +16,7 @@ export const HabitItem = styled(Grid)`
         text-align: justify;
         margin-inline-end: 1rem;
     }
-    .image{
+    .image-wrapper{
         margin-inline-start: 1.4rem;
         position:relative;
         overflow:hidden;
@@ -26,13 +26,14 @@ export const HabitItem = styled(Grid)`
         background: var(--default-white-color);
         border: 0.25rem solid var(--main-bg-title-color);
         box-sizing: border-box;
+        .image{
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);  
+        }
     }    
-    img{
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);  
-    }
+    
     @media screen and (max-width: 900px) {
         font-size: 0.75rem;
         text-align: -webkit-center;

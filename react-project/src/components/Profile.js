@@ -9,14 +9,18 @@ import {
     TitleInfoBlock,
     TotalAchievements
 } from "../css/profile";
-import SmokingHabit from "../images/smoking.svg";
-import Sport from "../images/sport.svg";
-import JunkFood from "../images/food.svg";
-import Fruits from "../images/fruits.svg";
-import Steps from "../images/steps.svg";
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {daily_check, get_user_habits} from "../actions/habits";
+
 
 function Profile({user}) {
+    const habits = useSelector(state => state.habits.userHabits);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(get_user_habits());
+    }, [dispatch]);
+
 
     return (
         <React.Fragment>
@@ -33,37 +37,22 @@ function Profile({user}) {
                                     <p>Achievements: 11</p>
                                 </TotalAchievements>
                             </PersonalInfo>
-                        </Grid>
+                         </Grid>
                          <Grid item lg={6} xs={12}>
                              <HabitsProgress container direction="column">
                                  <TitleBlock item>
                                      <p>In progress:</p>
                                  </TitleBlock>
+                                 {habits && habits.map((habit) =>
                                  <HabitItem item lg={6} xs={12} alignItems="center" justifyContent="space-evenly">
-                                     <Grid item xs={3} md={2} lg={3}><div className="image"><img src={SmokingHabit} alt="habit"/></div></Grid>
-                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Smoking cigarettes</p></Grid>
-                                     <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
-                                 </HabitItem>
-                                 <HabitItem item lg={6} xs={12} alignItems="center">
-                                     <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Sport} alt="habit"/></div></Grid>
-                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Sport</p></Grid>
-                                     <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
-                                 </HabitItem>
-                                 <HabitItem item lg={6} xs={12} alignItems="center">
-                                     <Grid item xs={3} md={2} lg={3}><div className="image"><img src={JunkFood} alt="habit"/></div></Grid>
-                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Junk food</p></Grid>
-                                     <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
-                                 </HabitItem>
-                                 <HabitItem item lg={6} xs={12} alignItems="center">
-                                     <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Fruits} alt="habit"/></div></Grid>
-                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">Fruits and Vegetables</p></Grid>
-                                     <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
-                                 </HabitItem>
-                                 <HabitItem item lg={6} xs={12} alignItems="center">
-                                     <Grid item xs={3} md={2} lg={3}><div className="image"><img src={Steps} alt="habit"/></div></Grid>
-                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">10000 steps a day</p></Grid>
-                                     <Grid item xs={4} md={4} lg={4}><CheckButton><p>Daily check-in</p></CheckButton></Grid>
-                                 </HabitItem>
+                                     <Grid item xs={3} md={2} lg={3}>
+                                         <div className="image-wrapper">
+                                             <div className="image" dangerouslySetInnerHTML={{ __html: `${habit.image}` }} />
+                                         </div>
+                                     </Grid>
+                                     <Grid item xs={5} md={6} lg={5}><p className="habitTitle">{habit.name}</p></Grid>
+                                     <Grid item xs={4} md={4} lg={4}><CheckButton onClick={() => dispatch(daily_check(habit.id))}><p>Daily check-in</p></CheckButton></Grid>
+                                 </HabitItem>)}
                              </HabitsProgress>
                          </Grid>
                      </Grid>

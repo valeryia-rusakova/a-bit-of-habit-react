@@ -105,23 +105,22 @@ export const HabitItem = styled(Grid)`
         margin-inline-end: auto;
         margin-inline-start:0.4rem;
     }
-    .image{
+    .image-wrapper{
+        margin-inline-start: 1.4rem;
         position:relative;
         overflow:hidden;
-        margin-inline-start: 1.4rem;
         border-radius: 6.25rem;
         width: 6.25rem;
         height: 6.25rem;
         background: var(--default-white-color);
         border: 0.25rem solid var(--main-bg-title-color);
         box-sizing: border-box;
-    }    
-    img{
-        position:absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);  
-    }
+        .image{
+          position:absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);  
+        }
     @media screen and (max-width: 510px) {
         font-size: 0.75rem;
         .image{

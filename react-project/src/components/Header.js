@@ -34,8 +34,8 @@ const Header = ({logout}) => {
                                  <ListItem className="menuItem">
                                      <Link to="/profile">Account</Link>
                                      <List>
-                                        <ListItem><Link to="/login">Settings</Link></ListItem>
-                                        <ListItem><Link to="/login" onClick={logout_account}>Log out</Link></ListItem>
+                                        <ListItem><Link to="/">Settings</Link></ListItem>
+                                        <ListItem><Link to="/" onClick={logout_account}>Log out</Link></ListItem>
                                      </List>
                                  </ListItem>
                                 </List>

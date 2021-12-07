@@ -1,12 +1,14 @@
 import {Container, Grid, MenuItem, Select} from "@material-ui/core";
 import * as React from "react";
 import {AddButton, DropDown, HabitChoice, HabitItem, HabitsItems} from "../css/habits";
-import {useDispatch, useSelector} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {add_habit, get_all_habits} from "../actions/habits";
+import {logout} from "../actions/auth";
+import {Redirect} from "react-router-dom";
 
 
-function Habits() {
+function Habits({isAuthenticated}) {
     const [type, setType] = useState('Healthy');
     const habits = useSelector(state => state.habits.allHabits);
     const dispatch = useDispatch();
@@ -19,6 +21,11 @@ function Habits() {
     useEffect(() => {
         dispatch(get_all_habits());
     }, [dispatch]);
+
+    if (!isAuthenticated) {
+        dispatch(logout());
+        return <Redirect to='/' />
+    }
 
     return (
         <React.Fragment>
@@ -62,4 +69,8 @@ function Habits() {
     );
 }
 
-export default Habits;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps,)(Habits);

@@ -1,6 +1,7 @@
 import axios from "axios";
 import configData from "../config.json";
 import {habitConstants, imageConstants} from "./types";
+import {toast} from "react-toastify";
 
 
 export const get_all_habits = () => async dispatch => {
@@ -39,10 +40,13 @@ export const add_habit = (habit) => async dispatch => {
             type: habitConstants.ADD_HABIT_SUCCESS,
             payload: res.data
         });
+        toast.success("The habit was successfully added!")
     } catch (err) {
         dispatch({
             type: habitConstants.ADD_HABIT_FAIL,
         });
+        toast.error("Something went wrong! " +
+            "You’ve already added this habit")
     }
 };
 
@@ -61,10 +65,12 @@ export const daily_check = (habitUser) => async dispatch => {
             type: habitConstants.DAILY_CHECK_SUCCESS,
             payload: res.data
         });
+        toast.success("Success!")
     } catch (err) {
         dispatch({
             type: habitConstants.DAILY_CHECK_FAIL
         });
+        toast.error("You’ve already checked-in today")
     }
 };
 

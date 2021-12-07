@@ -12,15 +12,19 @@ import {
 import {connect, useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {daily_check, get_user_habits} from "../actions/habits";
+import {Redirect} from "react-router-dom";
 
 
-function Profile({user}) {
+function Profile({user, isAuthenticated}) {
     const habits = useSelector(state => state.habits.userHabits);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(get_user_habits());
     }, [dispatch]);
 
+    if (!isAuthenticated) {
+        return <Redirect to='/' />
+    }
 
     return (
         <React.Fragment>
@@ -63,7 +67,8 @@ function Profile({user}) {
 }
 
 const mapStateToProps = state => ({
-    user: state.auth.user
+    user: state.auth.user,
+    isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps,)(Profile);

@@ -153,3 +153,27 @@ export const PostButton = styled.button`
     }
 
 `
+
+export const CommentButton = styled.button`
+    float: left;
+    border-radius: 0.5rem;
+    margin-top: 1.4rem;
+    margin-bottom: 0.9rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background:var(--main-btn-color);
+    font-family: Montserrat;
+    font-weight: 400;
+    width: 6.5rem;
+    height: 2.375rem;
+    font-size: 0.875rem;
+    p{
+        margin: 0;
+        text-align:center;
+        color:var(--main-light-color);
+    }
+    :hover{
+        background: var(--button-hover-color);
+    }
+`

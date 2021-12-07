@@ -36,3 +36,4 @@ export const habitConstants = {
     GET_USER_HABITS_SUCCESS: 'GET_USER_HABITS_SUCCESS',
     GET_USER_HABITS_FAIL: 'GET_USER_HABITS_FAIL'
 };
+

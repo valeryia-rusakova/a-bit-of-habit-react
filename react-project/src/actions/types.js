@@ -37,3 +37,7 @@ export const habitConstants = {
     GET_USER_HABITS_FAIL: 'GET_USER_HABITS_FAIL'
 };
 
+export const achievementConstants = {
+    GET_USER_ACHIEVEMENTS_SUCCESS: 'GET_USER_ACHIEVEMENTS_SUCCESS',
+    GET_USER_ACHIEVEMENTS_FAIL: 'GET_USER_ACHIEVEMENTS_FAIL'
+};

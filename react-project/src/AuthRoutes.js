@@ -6,6 +6,6 @@ import Login from "./components/Login";
 export const AuthRoutes = () => (
     <Switch>
         <Route path="/signup" component={Signup} />
-        <Route path="/login" component={Login} />
+        <Route path="/" component={Login} />
     </Switch>
  )

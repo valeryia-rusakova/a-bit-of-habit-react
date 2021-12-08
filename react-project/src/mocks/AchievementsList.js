@@ -1,3 +1,4 @@
+
 export const AchievementsList = [
     {
         image: 'Silver',

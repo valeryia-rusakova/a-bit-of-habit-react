@@ -50,7 +50,7 @@ const Post = ({match,isAuthenticated, add_comment}) => {
 
     if (!isAuthenticated) {
         dispatch(logout());
-        return <Redirect to='/login' />
+        return <Redirect to='/' />
     }
 
     if(post){

@@ -12,13 +12,16 @@ import {
 import {connect, useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {daily_check, get_user_habits} from "../actions/habits";
+import {get_user_achievements} from "../actions/achievements";
 
 
 function Profile({user}) {
     const habits = useSelector(state => state.habits.userHabits);
+    const achievements = useSelector(state => state.achievements.userAchievements);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(get_user_habits());
+        dispatch(get_user_achievements());
     }, [dispatch]);
 
 
@@ -34,7 +37,7 @@ function Profile({user}) {
                                     <Grid item sm={6} xs={12}><p className="email">{user.email}</p></Grid>
                                 </TitleInfoBlock>
                                 <TotalAchievements item>
-                                    <p>Achievements: 11</p>
+                                    <p>Achievements: {achievements.length}</p>
                                 </TotalAchievements>
                             </PersonalInfo>
                          </Grid>

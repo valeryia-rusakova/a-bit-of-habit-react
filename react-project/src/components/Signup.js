@@ -17,6 +17,7 @@ import {
     SignupButton,
     SignupForm
 } from "../css/auth";
+import {toast} from "react-toastify";
 
 
 const Signup = ({ signup, isAuthenticated }) => {
@@ -38,14 +39,16 @@ const Signup = ({ signup, isAuthenticated }) => {
         if (password === re_password) {
             signup(username, email, password, re_password);
             setAccountCreated(true);
+        }else{
+            toast.error("The password and confirm password fields do not match")
         }
     };
 
     if (isAuthenticated) {
-        return <Redirect to='/' />
+        return <Redirect to='/profile' />
     }
     if (accountCreated) {
-        return <Redirect to='/login' />
+        return <Redirect to='/' />
     }
 
     return(
@@ -60,6 +63,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                     <FormFieldWrapper>
                         <SpanWrapper><AccountCircle/></SpanWrapper>
                         <InputWrapper
+                            type='text'
                             name='username'
                             value={username}
                             onChange={e => onChange(e)}
@@ -71,6 +75,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                     <FormFieldWrapper>
                         <SpanWrapper><Email/></SpanWrapper>
                         <InputWrapper
+                            type='email'
                             name='email'
                             value={email}
                             onChange={e => onChange(e)}
@@ -106,7 +111,7 @@ const Signup = ({ signup, isAuthenticated }) => {
                     <FooterLink item xs={6}>
                         <LinkWrapper>
                             <p>Already have an account?<br/>
-                            <Link to="/login"> Sign in</Link>
+                            <Link to="/"> Sign in</Link>
                             </p>
                         </LinkWrapper>
                     </FooterLink>

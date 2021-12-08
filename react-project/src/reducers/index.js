@@ -7,6 +7,6 @@ import comments from "./comments";
 export const rootReducer = combineReducers({
     auth,
     posts,
-    habits
+    habits,
     comments
 });

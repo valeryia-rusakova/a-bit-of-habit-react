@@ -47,7 +47,7 @@ function NewPost({add_post, isAuthenticated}) {
 
     if (!isAuthenticated) {
         logout();
-        return <Redirect to='/login' />
+        return <Redirect to='/' />
     }
     return (
         <React.Fragment>

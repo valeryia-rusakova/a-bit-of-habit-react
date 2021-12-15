@@ -25,7 +25,7 @@ const Post = ({match,isAuthenticated, add_comment}) => {
     const { postId } = match.params
     const post = useSelector(state => state.posts.singlePost);
     const comments = useSelector(state => state.comments.allComments);
-    const postComments = comments.filter(comment => comment.post === post.id);
+    const postComments = comments.filter(comment => comment.post === postId);
     const dispatch = useDispatch();
 
     useEffect(() => {
